@@ -129,7 +129,7 @@
 
 
 
-const likes = (hobby) => {
+const likes = function(hobby){
     console.log(this.name + ' likes ' + hobby);
 }
 const user = {
@@ -137,3 +137,7 @@ const user = {
 }
 
 likes.call(user, "playing");
+// const hobbies = ["Sleeping", "Playing", "Gaming", "Crying"];
+// likes.apply(user, hobbies);
+// apply method comes in place where we need to pass numerous arguments inside a function but
+// writing each and everyone of the argument is too much work that's why apply() method helps us in that
