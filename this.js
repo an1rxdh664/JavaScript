@@ -128,16 +128,36 @@
 // greet.call(user); // 
 
 
+// const likes = function(hobby){
+//     console.log(this.name + ' likes ' + hobby);
+// }
+// const user = {
+//     name: "anirudh"
+// }
 
-const likes = function(hobby){
-    console.log(this.name + ' likes ' + hobby);
-}
-const user = {
-    name: "anirudh"
-}
+// likes.call(user, "playing");
 
-likes.call(user, "playing");
 // const hobbies = ["Sleeping", "Playing", "Gaming", "Crying"];
 // likes.apply(user, hobbies);
+
 // apply method comes in place where we need to pass numerous arguments inside a function but
 // writing each and everyone of the argument is too much work that's why apply() method helps us in that
+
+// bind()
+const getHobby  = function (hobby1, hobby2){
+    console.log(this.name + 'likes : ' + hobby1 + ', ' + hobby2);
+}
+
+const person = {
+    name: "Anirudh"
+}
+
+// what bind does different is that it does not give direct output, rather it returns an whole function which we can
+// use later anywhere.
+
+const newFn = getHobby.bind(person, "dancing", "singing");
+
+newFn(); // Anirudhlikes : dancing, singing
+
+// it can some advantages like if i want THIS to contain certain data only when a condition is met, so that's when
+// i can use BIND() 
