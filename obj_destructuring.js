@@ -154,24 +154,24 @@
 // const value = purse.coinCount?.value;
 // console.log(value); // now this results undefined and not a TypeError which would have crashed our program.
 
-const users = [
-  {
-      'name': 'Alex',
-      'address': '15th Park Avenue',
-      'age': 43
-  },
-  {
-      'name': 'Bob',
-      'address': 'Canada',
-      'age': 53
-  },
-  {
-      'name': 'Carl',
-      'address': 'Bangalore',
-      'age': 26
-  }
-];
+// const users = [
+//   {
+//       'name': 'Alex',
+//       'address': '15th Park Avenue',
+//       'age': 43
+//   },
+//   {
+//       'name': 'Bob',
+//       'address': 'Canada',
+//       'age': 53
+//   },
+//   {
+//       'name': 'Carl',
+//       'address': 'Bangalore',
+//       'age': 26
+//   }
+// ];
 
-for(let {name, address, age} of users){
-    console.log(name, address, age);
-}
+// for(let {name, address, age} of users){
+//     console.log(name, address, age);
+// }
