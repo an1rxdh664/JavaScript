@@ -142,11 +142,65 @@ function validDet(userDet){
     }
 }
 
-try{
-    validDet({name: "Anirudh", email: "anirudh.com"});
-} catch (error) {
-    console.error("Showing error message : ", error.message);
-}
+// try{
+//     validDet({name: "Anirudh", email: "anirudh.com"});
+// } catch (error) {
+//     console.error("Showing error message : ", error.message);
+// }
+
+// this second error message is used to display on the user end.
 
 // validDet({name: "Anirudh", email: "anirudh@gmail.com"});
 // validDet({name: "Anirudh", email: "anirudh.com"}); // Validation issues found : Please enter a valid email address
+
+
+// finally
+try {
+    // code that throw an error    
+} catch (error) {
+    // code to handle the error
+} finally {
+    // code that always runs (cleanup actions)
+}
+
+function processInfo(information){
+    try {
+        console.log("Fetching info...");
+        if(!information) throw new Error("No information available...");
+        console.log("information processed")
+    } catch (error) {
+        console.error("error : ", error.message);
+    } finally {
+        console.log("Cleanup: closing database connection");
+    }
+}
+// processInfo("anirudh"); // when passing some value to avoid error.
+// Fetching info...
+// information processed
+// Cleanup: closing database connection
+
+// processInfo(); // without info
+// Fetching info...
+// error :  No information available...
+// Cleanup: closing database connection
+
+
+
+// CUSTOM ERRORS
+
+function ValidationError(message){
+    this.name = "ValidationError";
+    this.message = message;
+}
+
+function validCitizen(age){
+    if(age<60) throw new ValidationError("You are not senior citizen");
+    return "You are a senior citizen";
+}
+
+try {
+    const msg = validCitizen(75);
+    console.log(msg);
+} catch (error) {
+    console.error(`${error.name} : ${error.message}`);
+}
