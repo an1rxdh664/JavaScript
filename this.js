@@ -144,20 +144,43 @@
 // writing each and everyone of the argument is too much work that's why apply() method helps us in that
 
 // bind()
-const getHobby  = function (hobby1, hobby2){
-    console.log(this.name + 'likes : ' + hobby1 + ', ' + hobby2);
-}
+// const getHobby  = function (hobby1, hobby2){
+//     console.log(this.name + 'likes : ' + hobby1 + ', ' + hobby2);
+// }
 
-const person = {
-    name: "Anirudh"
-}
+// const person = {
+//     name: "Anirudh"
+// }
 
 // what bind does different is that it does not give direct output, rather it returns an whole function which we can
 // use later anywhere.
 
-const newFn = getHobby.bind(person, "dancing", "singing");
+// const newFn = getHobby.bind(person, "dancing", "singing");
 
-newFn(); // Anirudhlikes : dancing, singing
+// newFn(); // Anirudhlikes : dancing, singing
 
 // it can some advantages like if i want THIS to contain certain data only when a condition is met, so that's when
 // i can use BIND() 
+
+
+// new
+const User = function (name, age){
+    this.name = name;
+    this.age = age;
+    this.log = function(){
+        console.log(this.name + ' is ' + this.age + ' years old');
+    }
+}
+
+// now that is a object constructor, whatever value i pass to this object it will be assigned to it inside an object
+// to create new custom instances of that object we can use the 'new' keyword
+
+const user1 = new User("Anirudh", 20);
+const user2 = new User("Aliya", 20);
+
+console.log(user1, user2);
+// this will log
+// User { name: 'Anirudh', age: 20 } User { name: 'Aliya', age: 20 }
+// we can see that the object now has a type called 'User'
+user1.log(); // this will invoke the method inside that object constructor
+user2.log();
