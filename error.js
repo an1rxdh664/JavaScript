@@ -50,21 +50,103 @@ try {
 // we can also see our message "error occured : " inside the error message in the output
 
 
-try {
-    console.log("start");
-    abc;
-    console.log("end");
-} catch (err) {
-    // console.log("error occured : ", err); // error occured : ReferenceError: abc is not defined
-    // console.log(err); // ReferenceError: abc is not defined
+// try {
+//     console.log("start");
+//     abc;
+//     console.log("end");
+// } catch (err) {
+//     // console.log("error occured : ", err); // error occured : ReferenceError: abc is not defined
+//     // console.log(err); // ReferenceError: abc is not defined
 
 
-    console.log(err.name); // this will just log "ReferenceError"
-    console.log(err.message); // abc is not defined
-    console.log(err.stack); 
-    // the .stack method will log all the nested calls that led to this error
-}
+//     console.log(err.name); // this will just log "ReferenceError"
+//     console.log(err.message); // abc is not defined
+//     console.log(err.stack); 
+//     // the .stack method will log all the nested calls that led to this error
+// }
 // we can see that the error also have a message field which we can print using the '.message'
 
 // just like message the error object has some other different methods we can use like
 // err.name, err.message, err.stack
+
+
+// Real word uses
+
+// let's say i want to create a function which divides two numbers
+// but when we try to divide something by 0 it gives infinity, and that is useless for the end user
+// so what we can do is that we can throw custom errors
+
+function divideNum(a, b){
+    try{
+        if(b===0){
+            throw new Error("Cannot divide by 0. Division by 0 is not allowed.");
+            // this new Error() is an error constructor like we construct objects, which creates an Instance of a error 
+            // and we pass some message in it
+            // because the error object has a message field in it,
+            // then this error is throwed onto the catch block which then prints our error.message
+        }
+        const result = a / b;
+        console.log("The result is " + result);
+    } catch(error) {
+        console.log("Got a error : ", error.message);
+    }
+}
+
+// divideNum(10, 2); // this will log nothing and the code will be executed without any errors
+// divideNum(10, 0); // this will log the error message we wrote above
+
+
+// example
+const person = {
+    name: "anirudh",
+    address: {
+        city: "Gwalior",
+        state: "Madhya Pradesh"
+    }
+}
+function getPostalCode(user){
+    try{
+        console.log(user.address.postalCode); // this will log undefined because we do have the user.address block but not the postalCode key
+        console.log(user.address.country.postalCode); // now this will log -->
+        // Error accessing property:  Cannot read properties of undefined (reading 'postalCode')
+    } catch (error) {
+        console.error("Error accessing property: ", error.message);
+    }
+}
+// getPostalCode(person);
+
+
+// example 2
+function validAge(age){
+    try {
+        if(isNaN(age)){
+            throw new Error("Age must be a number. Enter a valid age");
+        }
+        console.log("Your age is " + age);
+    } catch (error) {
+        console.error("Error occured : " + error.message);
+    }
+}
+// validAge("Anirudh");
+
+
+// Rethrowing errors
+function validDet(userDet){
+    try {
+        if(!userDet.name) throw new Error("A username is required. Please enter a username.");
+        if(!userDet.email.includes("@")) throw new Error("Please enter a valid email address");
+        console.log("name : " + userDet.name + "\nEmail : " + userDet.email);
+    } catch (error) {
+        console.error("Validation issues found : ", error.message);
+        throw error;
+    }
+}
+
+try{
+    validDet({name: "Anirudh", email: "anirudh.com"});
+} catch (error) {
+    console.error("Showing error message : ", error.message);
+}
+
+// validDet({name: "Anirudh", email: "anirudh@gmail.com"});
+// validDet({name: "Anirudh", email: "anirudh.com"}); // Validation issues found : Please enter a valid email address
