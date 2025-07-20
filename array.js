@@ -84,3 +84,33 @@ const teaIng = [...ingredients]; // spreads all the elements of the ingredient a
 // console.log(teaIng);
 
 
+// use cases of destructuring
+
+// swapping values of variables
+// the general way to swap two variables will be to take a temp variable and all that shit
+// with destructuring we can do it more quickly like :
+
+let first = 10;
+let second = 15;
+
+[first, second] = [second, first];
+
+// console.log("first : ", first); // 15
+// console.log("second : ", second); // 10
+// swapped values
+
+// merging
+
+let firstArr = [1, 2];
+let secArr = [6, 7, 8];
+// let mixArr = [...firstArr, ...secArr];
+// console.log(mixArr);
+
+// length property --> it is not a method, it is a property so it is used without the ()
+// console.log(mixArr.length); // 5
+// with the length property we can shrink the length of an array
+
+// console.log(secArr); // 6 7 8
+// secArr.length = 2; // now the secArr array will hold only 2 elements, before it was holding three elements, the last element will be removed now
+// console.log(secArr); // 6 7
+
