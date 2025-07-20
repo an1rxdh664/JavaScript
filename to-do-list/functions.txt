@@ -1,0 +1,16 @@
+1. Task Input
+    A text field to add tasks.
+    A button to submit.
+
+2. Task Display
+    List of all tasks.
+    Each with: task text, a checkbox, and a delete button.
+
+3. Completion Toggle
+    Check a task → mark it done (strike-through or fade).
+
+4. Delete Task
+    Click delete → task vanishes.
+
+5. Task Count
+    Shows total and completed tasks. 

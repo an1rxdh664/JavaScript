@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100%;
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    background-color: rgb(44, 44, 44);
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 75%;
+    height: auto;
+}
+.userInputs{
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    color: white;
+    border-radius: 10px 10px 10px 10px;
+    background-color: grey;
+}
+.userInputs input {
+    width: 25em;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+}
+.userInputs button{
+    padding: 10px;
+    width: 15em;
+    border-radius: 15px;
+    border: 1px solid rgb(0,0,0, 0.3);
+    background-color: rgb(255, 165, 0, 0.9);
+    cursor: pointer;
+}
+.userInputs button:hover{
+    background-color: rgb(255, 165, 0, 1);
+}
+.taskList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 72%;
+}
+.taskContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: green;
+}
+.taskContainer button{
+    padding: 10px;
+    width: 15em;
+    border-radius: 15px;
+    border: 1px solid rgb(0,0,0, 0.3);
+    background-color: rgb(255, 165, 0, 0.9);
+    cursor: pointer;
+}
