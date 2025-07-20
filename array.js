@@ -47,6 +47,40 @@
 // the typical way would be to create separate variables and assign each value by it's index
 // but if we were to use such an array where we cannot get the index value
 
-const arr = [1,2,3,4,5,6,7,8];
-const [one, two, three] = [1,2,3];
-console.log(one, two, three);
+// const arr = [1,2,3,4,5,6,7,8];
+// const [one, two, three] = [1,2,3];
+// console.log(one, two, three);
+
+// const arr = ["anirudh", "abhi", "aditya", "anmol"];
+// const [name1, name2, name3] = arr[0, 1, 2]; // example to learn about in future
+// const [name1, name2, name3] = ["anirudh", "abhi", "aditya"]; 
+// console.log(name1, name2, name3);
+
+// assiging a default value 
+// let say when destructuring an array, the array currently does not have specefic value to assign to the variable, in that case
+// const [us1, us2 = "Aliya"] = ["Anirudh"];
+// console.log(us1, us2); // the default value will be overwritten once the desired value for that variable is assigned
+
+
+// during destructuring if we want to skip certain value, like 2 in this case we have to do something like
+// const [val1, ,val2] = [1,2,3];
+// console.log(val1, val2) // 1 3
+
+
+// Nested arrays :
+// const arr = [1, 2, [3,4]]; // total elements inside this array are 3, not 4, because the last element of this array is a separate array itself which holds two elements.
+
+
+
+// rest and spread
+
+// ...rest parameter is used with variable and ...spread parameter is used with the value of the array itself
+const ingredients = ["tea", "sugar", "milk", "water", "adrak", "elaichi"];
+// const [ing1, ing2, ...restIng] = ingredients;
+// will store the remaining rest of the elements in the ingredients array into the restIng array
+
+// spread parameter
+const teaIng = [...ingredients]; // spreads all the elements of the ingredient array into the teaIng which are then stored into an array. 
+// console.log(teaIng);
+
+
