@@ -1,15 +1,15 @@
-const taskValue = document.querySelector('.inputBox');
-const addTaskBtn = document.querySelector('.addTaskButton')
+console.log("Hello");
 
-const tasks = [];
-
-addTaskBtn.addEventListener('click', () => {
-    if(taskValue.value === "") console.log("please enter a task before pressing the button");
-    else {
-        tasks.push({
-            taskName: `${taskValue.value}`,
-            isCompleted: false
-        });
-        console.log("Pushed tasks : ", tasks)
-    }
-});
+// const inputBox = document.querySelector('.inputBox');
+// const addTaskBtn = document.querySelector('.addTaskBtn');
+// const task = document.querySelector('.task');
+// addTaskBtn.addEventListener('click', () => {
+//     task.innerHTML += `
+//         <p>${inputBox.value}</p>
+//         <button>DELETE TASK</button>
+//     `
+// // });
+// // const delBtn = document.querySelector('.delBtn');
+// // delBtn.addEventListener('click', () => {
+// //     console.log("task deleted");
+// // })
