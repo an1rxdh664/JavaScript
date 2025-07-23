@@ -75,12 +75,12 @@
 // rest and spread
 
 // ...rest parameter is used with variable and ...spread parameter is used with the value of the array itself
-const ingredients = ["tea", "sugar", "milk", "water", "adrak", "elaichi"];
+// const ingredients = ["tea", "sugar", "milk", "water", "adrak", "elaichi"];
 // const [ing1, ing2, ...restIng] = ingredients;
 // will store the remaining rest of the elements in the ingredients array into the restIng array
 
 // spread parameter
-const teaIng = [...ingredients]; // spreads all the elements of the ingredient array into the teaIng which are then stored into an array. 
+// const teaIng = [...ingredients]; // spreads all the elements of the ingredient array into the teaIng which are then stored into an array. 
 // console.log(teaIng);
 
 
@@ -90,10 +90,10 @@ const teaIng = [...ingredients]; // spreads all the elements of the ingredient a
 // the general way to swap two variables will be to take a temp variable and all that shit
 // with destructuring we can do it more quickly like :
 
-let first = 10;
-let second = 15;
+// let first = 10;
+// let second = 15;
 
-[first, second] = [second, first];
+// [first, second] = [second, first];
 
 // console.log("first : ", first); // 15
 // console.log("second : ", second); // 10
@@ -101,8 +101,8 @@ let second = 15;
 
 // merging
 
-let firstArr = [1, 2];
-let secArr = [6, 7, 8];
+// let firstArr = [1, 2];
+// let secArr = [6, 7, 8];
 // let mixArr = [...firstArr, ...secArr];
 // console.log(mixArr);
 
@@ -113,4 +113,27 @@ let secArr = [6, 7, 8];
 // console.log(secArr); // 6 7 8
 // secArr.length = 2; // now the secArr array will hold only 2 elements, before it was holding three elements, the last element will be removed now
 // console.log(secArr); // 6 7
+
+// the length of an array can be from 2 ** 31 - 1
+
+
+
+// array methods
+// concat() -->
+// let arr1 = [1,2], arr2 = [3,4];
+// let arrCon = arr1.concat(arr2); // 1 2 3 4
+
+// join() -->
+// join method joins the array using a separator, the default separator used by this method is comma but we can pass our own separator
+// and ultimately returns a string
+// let joinArr = ["my", "name", "is", "anirudh"];
+// // let res = joinArr.join(); // if i don't pass anything while calilng this method, this will just use comma as it's default separator : my,name,is,anirudh
+// let res = joinArr.join("+"); // now this gives, my+name+is+anirudh
+// when we join a empty array [] it returns a empty string ""
+
+// fill()
+// this method in js just fills the array with some values in it
+// the fill method mutates, which means it changes the original array
+// let arr = [1,2,3];
+// arr.fill(4); // normal log woudlve logged [1,2,3], now after fill all the value in this array will be replaced by 4
 
