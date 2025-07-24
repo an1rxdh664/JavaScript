@@ -167,8 +167,45 @@
     //     else return 1;
     // })); // this will now return a array in descending order
 
-    let arr = [10,2,34,15,11,100,250,45,23];
-    console.log(arr.sort()); // the output which it will give is not a sorted array
-        // why? because the sort method first convert each element into a string and then compare it, rather than comparing the numeric value directly
-    console.log(arr.sort((a,b) => {return a===b ? 0 : a > b ? -1 : 1})); // descending sort
-    console.log(arr.sort((a,b) => {return a===b ? 0 : a > b ? 1 : -1})); // ascending sort
+    // let arr = [10,2,34,15,11,100,250,45,23];
+    // console.log(arr.sort()); // the output which it will give is not a sorted array
+    //     // why? because the sort method first convert each element into a string and then compare it, rather than comparing the numeric value directly
+    // console.log(arr.sort((a,b) => {return a===b ? 0 : a > b ? -1 : 1})); // descending sort
+    // console.log(arr.sort((a,b) => {return a===b ? 0 : a > b ? 1 : -1})); // ascending sort
+
+
+// splice() method --
+        // delete or add some elements into an array
+        // modify the element of an array
+// splice(start, deleteCount, item1, item2);
+        // item1 and 2 will be added into the modified array
+        // start will be the starting index from which the deletion will begin
+        // the deleteCount is the number of elements to be deleted from the start index
+        // let arr = ['Ani', 'Khushi', 'Adi', 'Abhi'];
+        // console.log(arr.splice(2,2)); // this will delete 'Adi' and 'Abhi' from the array
+        // arr.splice(2,1,'Himanshi'); // this will replace 'Adi' with 'Himanshi'
+        // console.log(arr);
+
+// at() -- finds the value at the index which is passed
+        // now this can find the value at negative indexes too, just now this time the iteration or the cound of index will begin from the end of the array.
+
+// copyWithin() -- copies a part of an array, to an another location in the same array.
+        // copyWithin(target, start, end)
+        // target is the index from where the copyWithin function will start copying
+    
+        // let arr = [1,2,3,4,5,6,7];
+        // arr.copyWithin(0,1,4);
+        // console.log(arr);
+
+
+// flat() -- this method works while using nested arrays, it flats out the elements of nested array
+        // by default the flat method only flats out the first nested array, rest of the inside nested arrays stays the same
+        // let arr = [1,2,[3,4]];
+        // console.log(arr.flat()); // [1,2,3,4]
+        // to flat out all the elements of an array we can use :
+        // let arr = [1,2,[3,4,[5,[7,8]]]];
+        // console.log(arr.flat(Infinity)); // [1,2,3,4,5,6,7,8]
+
+
+
+        
