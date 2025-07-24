@@ -207,5 +207,31 @@
         // console.log(arr.flat(Infinity)); // [1,2,3,4,5,6,7,8]
 
 
+// Grouping data in arrays
+{
+    const students = [
+        {name: "Anirudh", branch: "BCA", GPA: 8.3},
+        {name: "Khushi", branch: "BTech", GPA: 9},
+        {name: "Aditya", branch: "BCA", GPA: 8},
+        {name: "Abhi", branch: "BTech", GPA: 8.5},
+    ]
+    const groupedObject = Object.groupBy(students, ({branch})=>{
+        return branch;
+    });
+    // console.log(groupedObject);
 
-        
+    const moreGPA = Object.groupBy(students, ({GPA})=>{
+        return GPA >= 8.5 ? "More than 8.5" : "Less than 8.5"
+    });
+    // console.log(moreGPA);
+}
+
+// IMMUTABILITY IN JS
+{
+    let arr = [1,2,3,4,5,6,7];
+    // till now we used the methods like :
+        // reverse(), splice()
+    // these methods changes the original source array
+    // to tackle that we have some other methods like :
+    arr.toReversed();
+}
