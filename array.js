@@ -136,4 +136,39 @@
 // the fill method mutates, which means it changes the original array
 // let arr = [1,2,3];
 // arr.fill(4); // normal log woudlve logged [1,2,3], now after fill all the value in this array will be replaced by 4
+    // -- selective filling :
 
+    // let arr = ['red', 'green', 'blue'];
+    
+    // // arr.fill('pink', 1, 3); // arr.fill(*value*, *starting index*, *stopping index*);
+    // console.log(arr);
+
+// includes() --
+// includes method checks if a value exist in a array or not, returns true or false based on that
+
+// indexOf() -- returns the index of the first occurance of the passed element
+//              if it does not find a value it returns -1 
+
+// lastIndexOf() -- returns the index of the last occurance of the passed element, and -1 if no element is found
+
+// reverse() -- reverses the array, and also it mutates the original array.
+
+
+
+// sorting --
+    // default sort() method converts the element types into strings
+    // default sort() order is ascending
+
+    // to sort in a descending order, we have to pass a comparator function into the sort method
+    // console.log(arr.sort()); // default - ascending
+    // console.log(arr.sort(function (a,b){
+    //     if(a===b) return 0;
+    //     else if (a > b) return -1;
+    //     else return 1;
+    // })); // this will now return a array in descending order
+
+    let arr = [10,2,34,15,11,100,250,45,23];
+    console.log(arr.sort()); // the output which it will give is not a sorted array
+        // why? because the sort method first convert each element into a string and then compare it, rather than comparing the numeric value directly
+    console.log(arr.sort((a,b) => {return a===b ? 0 : a > b ? -1 : 1})); // descending sort
+    console.log(arr.sort((a,b) => {return a===b ? 0 : a > b ? 1 : -1})); // ascending sort
