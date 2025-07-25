@@ -255,3 +255,27 @@
         // console.log(newNames); // [ 'Anirudh', 'Khushi', 'Anmol', 'Abhi' ]
         // this also works with the negative index values
 }
+
+
+// Array Like -->
+{
+    {key: "value"} // object
+    [1,2,3,4,5] // array
+
+    // Array like, is not an array but like an object, that has some behaviour like array, like we have index access and non negative length property
+    // but is not an array. because it does not have other array methods which we studied before...
+    // it has a length property
+
+    const arr_Like = {0: "Hi", 1: "Hello", 2: "BoomBoom", length: 3};
+    // console.log(arr_Like[0], arr_Like[2], arr_Like.length);
+    // this is somewhat looks like we are accessing elements in an array but in reality we are NOT
+    // console.log(arr_Like instanceof Object); //true
+
+    // another example would be function
+    function checkArgs() {
+        console.log(arguments);
+    }
+    // whenever a function is created we get a arguments object assigned, which stores the arguments passed to that particular function
+    // checkArgs(34,21); // when we invoked that function with some args, we got the output : [Arguments] { '0': 34, '1': 21 } and it is an object
+    
+}
