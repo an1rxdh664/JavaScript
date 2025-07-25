@@ -228,10 +228,30 @@
 
 // IMMUTABILITY IN JS
 {
-    let arr = [1,2,3,4,5,6,7];
-    // till now we used the methods like :
-        // reverse(), splice()
-    // these methods changes the original source array
-    // to tackle that we have some other methods like :
-    arr.toReversed();
+    // toReversed() -->
+        // let arr = [1,2,3,4,5,6,7];
+        // till now we used the methods like :
+            // reverse(), splice()
+        // these methods changes the original source array
+        // to tackle that we have some other methods like :
+        // const revArr = arr.toReversed(); // because this will return another array and not modify the original array
+        // console.log(revArr);
+    
+    // toSorted() -->
+        // let arr = [1,5,2,6,8,9,3,4];
+        // let sorArr = arr.toSorted(); // this will now return a new sorted array.
+        // console.log(sorArr);
+
+    // toSpliced() -->
+        // const numbers = [1,2,3,4,5];
+        // const newNums = numbers.toSpliced(1,0,6);
+        // console.log(numbers, newNums);
+
+    // with() -->
+        // this is useful when we are trying to change a element in an array but without mutating the original source array
+        // const names = ["Anirudh", "Khushi", "Adi", "Abhi"];
+        // const newNames = names.with(2,"Anmol");
+        // console.log(names); // [ 'Anirudh', 'Khushi', 'Adi', 'Abhi' ]
+        // console.log(newNames); // [ 'Anirudh', 'Khushi', 'Anmol', 'Abhi' ]
+        // this also works with the negative index values
 }
