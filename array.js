@@ -257,7 +257,7 @@
 }
 
 
-// Array Like -->
+// Array Like & Static methods-->
 {
     {key: "value"} // object
     [1,2,3,4,5] // array
@@ -291,6 +291,10 @@
     // arg(2,3,4); // now when we invoke the function we get an array of [2,3,4]
     // we can now use array methods such as forEach on it...
 
+    
+    
+    // Static Methods :
+    
     // so that is one way of converting array like to array, the another way is :
     // Array.from(); 
     // when an array like object is passed to this function it returns the converted array
@@ -300,4 +304,25 @@
     }
     // check(1,2,3,4); // invoking this function now logs : [1,2,3,4] true
     // Array.from() is also one of the static methods of array
+
+
+    // Array.fromAsync() -->
+    // this also does the same thing the Array.from() does but in a different way
+    // this returns a promise and not an array, we late can use that promise to get the value
+    // like
+    function getFromAsync(){
+        const collectedPromise = Array.fromAsync(arguments); // this will return the promise
+        collectedPromise.then((value) => console.log(value)); // the 'value' is the array
+    }
+    // getFromAsync(4,5,6);
+
+    // Array.of() -->
+    // this creates a new instance of an array, before we were creating an array from array like..
+    // but this just creates a new array
+    const first = new Array(2,3,4);
+    const second = [1,2,3]
+    // these are the typical two way of how we used to make arrays
+    const third = Array.of(1, true, "Anirudh", {name: "Ali"}, [3,4]);
+
+    console.log(third, Array.isArray(third)); // true
 }
