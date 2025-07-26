@@ -278,4 +278,26 @@
     // whenever a function is created we get a arguments object assigned, which stores the arguments passed to that particular function
     // checkArgs(34,21); // when we invoked that function with some args, we got the output : [Arguments] { '0': 34, '1': 21 } and it is an object
     
+
+    // Array-like to Arrays :
+    function arg(){
+        const arr = [...arguments]; // spreading the elements of arguments into the arr array
+        console.log(arr);
+        console.log(Array.isArray(arr)); // true
+        arr.forEach((elem)=>{
+            console.log(elem);
+        })
+    }
+    // arg(2,3,4); // now when we invoke the function we get an array of [2,3,4]
+    // we can now use array methods such as forEach on it...
+
+    // so that is one way of converting array like to array, the another way is :
+    // Array.from(); 
+    // when an array like object is passed to this function it returns the converted array
+    function check(){
+        const collected = Array.from(arguments);
+        console.log(collected, Array.isArray(collected));
+    }
+    // check(1,2,3,4); // invoking this function now logs : [1,2,3,4] true
+    // Array.from() is also one of the static methods of array
 }
