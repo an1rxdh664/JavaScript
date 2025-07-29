@@ -470,4 +470,43 @@
     const evenNums = [2,4,6,8,10];
     let checkEven = evenNums.every((num) => {return num / 2});
     // console.log(checkEven); // for nums.every() this returns false but for evenNums.every() this returns true
+
+
+    // find() --> to find the youngest customer
+    const youngestCustomer = customers.find((customer) => { return customer.age < 6});
+    // console.log(youngestCustomer);
+    // we can see that it returned the element which returned true for the condition we were checking
+    
+    // and so if we were to find the index of that element we can use the method
+    // - findIndex()
+    const youngestCustomerIndex = customers.findIndex((customer) => { return customer.age < 6 });
+    // console.log(youngestCustomerIndex); // it returned 4
+
+
+    // Method chaining
+    // Use case : Get the total amount spent by married couples
+    const totalAmount = customers.filter((customer) => {return customer.isMarried})
+                            .reduce((acc, curr) => {
+                                acc += curr.totalExpense;
+                                return acc;
+                            }, 0);
+    // console.log(totalAmount);
+
+    
+    // entries -> this method will give an iterator for an array
+    const numbers = [1,2,3,4];
+    const numItr = numbers.entries();
+    // console.log(numItr); // this gives us and Object [Array Iterator] {}
+    // console.log(numItr.next().value); // this gives us next value in the iterator
+    // this right now gives [0,1] in which 0 is the index and 1 is the value
+    // so we have an array which have 1 at the 0th index, if we log this again we will get the next value this time
+    // console.log(numItr.next().value); // [1,2]
+    // 2 at the index 1
+
+    // to print it whole in the using a single loop we can do a little bit of destructuring
+    // for(const [index, value] of numItr) console.log(index, value); // <-- destructuring
+
+    // values() -->
+    // the difference between this and entries() is just that this method only gives values in it's iterator and not the index
+
 }
