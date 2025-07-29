@@ -1,11 +1,14 @@
 const inputTasks = document.querySelector('.inputBox');
 const addTaskBtn = document.querySelector('.addTaskBtn');
 const taskContainer = document.querySelector('.taskContainer');
-
+const deleteTaskBtn = document.querySelector('.deleteTaskBtn');
 const tasks = [];
 
 function addTask(taskName){
+    let sameTask;
+
     tasks.push({
+        id: Date.now(),
         name: taskName,
         isCompleted: false
     })
@@ -14,6 +17,7 @@ function addTask(taskName){
 let tasksListHTML = '';
 
 function renderTasks(){
+    tasksListHTML = '';
     tasks.forEach((task) => {
         tasksListHTML += `
             <div class="task">
@@ -27,7 +31,7 @@ function renderTasks(){
 
 addTaskBtn.addEventListener('click', () => {
     addTask(inputTasks.value);
-    inputTasks.value = '';
+    renderTasks();
     taskContainer.innerHTML = tasksListHTML;
-    console.log(tasks); 
-});
+    console.log(tasks);
+})

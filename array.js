@@ -324,5 +324,150 @@
     // these are the typical two way of how we used to make arrays
     const third = Array.of(1, true, "Anirudh", {name: "Ali"}, [3,4]);
 
-    console.log(third, Array.isArray(third)); // true
+    // console.log(third, Array.isArray(third)); // true
+}
+
+
+
+// Iterator methods
+{
+    const customers = [
+        {
+            firstName: "Walter",
+            lastName: "White",
+            age: 52,
+            gender: "Male",
+            isMarried: true,
+            totalExpense: 1200,
+            itemsPurchased: ["Flask", "RV rental", "Methylamine"]
+        },
+        {
+            firstName: "Jesse",
+            lastName: "Pinkman",
+            age: 26,
+            gender: "Male",
+            isMarried: false,
+            totalExpense: 800,
+            itemsPurchased: ["Beaker", "Gas mask", "Cheetos"]
+        },
+        {
+            firstName: "Skyler",
+            lastName: "White",
+            age: 45,
+            gender: "Female",
+            isMarried: true,
+            totalExpense: 500,
+            itemsPurchased: ["Printer paper", "Ledger", "Pen"]
+        },
+        {
+            firstName: "Lightning",
+            lastName: "McQueen",
+            age: 7,
+            gender: "male",
+            isMarried: false,
+            totalExpense: 500,
+            itemsPurchased: ["Oil", "Greese", "Tyres"]
+        },
+        {
+            firstName: "Sherrif",
+            lastName: "Woody",
+            age: 5,
+            gender: "Male",
+            isMarried: true,
+            totalExpense: 500,
+            itemsPurchased: ["Paint", "Hat", "Tyres"]
+        },
+        {
+            firstName: "Buzz",
+            lastName: "Lightyear",
+            age: 6,
+            gender: "Male",
+            isMarried: false,
+            totalExpense: 500,
+            itemsPurchased: ["Tennis Ball", "Oil", "Tyres"]
+        }
+    ];
+
+    //filter() -- get senior citizens by filtering out other customers
+    /*
+        const newArr = arr.filter((element, index, arr) => {});
+
+        what it does is whatever the action performed inside the callback function, if returns true, then that value will be stored inside the array.
+    */
+    const seniorCitizens = customers.filter((customer) => {
+        return customer.age >= 40;
+    })
+    // console.log(seniorCitizens);
+
+    // map() - Transform to add title and full name - transformational function
+    /*
+        const newArr = arr.map((element, index ,arr) => {})
+    */
+    const setTitle = customers.map((customer) => {
+        let title = '';
+        if(customer.gender === 'Male') title = "Mr.";
+        else if(customer.gender === 'Female' && customer.isMarried === true) title = "Mrs.";
+        else title = "Miss";
+
+        customer['full_name'] = `${title} ${customer.firstName} ${customer.lastName}`;
+
+        return customer;
+    });
+    // console.log(setTitle);
+
+    // reduce()
+    /*
+        const averageAge = arr.reduce(reducer(accumulator, currentValue, index, array), initial value);
+        
+        -- this 'initial value' is the value which will be assigned to the accumulator
+
+        reducer(accumulator, currentValue, index, array) -->
+            do something with accumulator and currentValue
+            get a result
+            return that result
+
+        that returned result will be then assigned to the accumulator
+        in case, when accumulator is not assigned, the first value of the array will be assigned to it.
+
+        in some case where we have to begin from the last element to the first, we can use the --
+        reduceRight() method instead of a regular reduce function
+    */
+
+    const arr = [1,2,3,4,5];
+    let sum = arr.reduce((acc, curr) => {
+        return acc + curr;
+    }, 0);
+    // console.log(sum);
+
+    // To print the average of customers who boutght 'Tyres' in the customers object using the reduce funciton
+    let count = 0;
+    const averageAge = customers.reduce((acc, curr) => {
+        if(curr.itemsPurchased.includes("Tyres")){
+            acc = acc + curr.age;
+            count++;
+        }
+        return acc;
+    }, 0);
+    // console.log(averageAge / count);
+
+    // some() --> returns true if the callback function returns true for at least one of the element of the array
+    /*
+        arr.some((element, index, array) => {})
+    */
+    // check if we have a customer whose age is less than 6
+    const childCustomer = customers.some((customer) => { return customer.age < 6 });
+    // console.log(childCustomer); // this result true
+
+
+    // just like some() --> we now have an every() method
+    // every() --> this method returns true only when the callback function returns true for all the elements inside the array
+
+    // let's check if all the customers were married or not?
+    const marriedCust = customers.every((customer) => {return customer.isMarried});
+    // console.log(marriedCust); // this returns false because not every customer was married.
+
+    const nums = [1,2,3,4,5];
+    const evenNums = [2,4,6,8,10];
+    let checkEven = evenNums.every((num) => {return num / 2});
+    // console.log(checkEven); // for nums.every() this returns false but for evenNums.every() this returns true
 }
