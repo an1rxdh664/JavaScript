@@ -503,7 +503,7 @@
     // console.log(numItr.next().value); // [1,2]
     // 2 at the index 1
 
-    // to print it whole in the using a single loop we can do a little bit of destructuring
+    // to print it whole, using a single loop we can do a little bit of destructuring
     // for(const [index, value] of numItr) console.log(index, value); // <-- destructuring
 
     // values() -->
