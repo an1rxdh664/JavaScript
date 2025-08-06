@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+#text-display {
+  margin: 20px auto;
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+#text-input {
+  width: 60%;
+  height: 100px;
+  margin-top: 20px;
+}
