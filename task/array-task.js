@@ -6,7 +6,7 @@
 // let numCopy = nums;
 // console.log(numCopy === nums);
 
-let nums = [] + [];
+// let nums = [] + [];
 // console.log(nums, typeof nums, nums.length);
 
 // converts an array into a string
@@ -58,4 +58,15 @@ for(let i of employees){
     if(i.salary > max) max = i.salary;
     highstSalary = i;
 }
-console.log(highstSalary);
+// console.log(highstSalary);
+
+// Shuffle the array
+let nums = [2,5,1,3,4,7];
+let n = 3;
+let arr1 = [], arr2 = [];
+for(let i=0;i<n;i++){
+  arr1.push(nums[i]);
+}
+for(let i=n;i<nums.length;i++){
+  arr2.push(nums[i]);
+}
