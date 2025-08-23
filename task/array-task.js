@@ -60,13 +60,20 @@ for(let i of employees){
 }
 // console.log(highstSalary);
 
-// Shuffle the array
-let nums = [2,5,1,3,4,7];
-let n = 3;
-let arr1 = [], arr2 = [];
-for(let i=0;i<n;i++){
-  arr1.push(nums[i]);
+// zigzag conversion
+function zigzagStr(str, numRows){
+  if(numRows === 1 || str.length < numRows) return str;
+  let direction = false;
+  let count = 0;
+  let arr = new Array(numRows).fill("");
+  for(let i=0;i<str.length;i++){
+    arr[count] += str[i];
+    if(count === 0 || count >= numRows - 1) direction = !direction;
+    direction ? count++ : count--;
+  }
+  return arr.join("");
 }
-for(let i=n;i<nums.length;i++){
-  arr2.push(nums[i]);
+{
+  let zig = zigzagStr("PAYPALISHIRING", 3);
+  console.log(zig);
 }
