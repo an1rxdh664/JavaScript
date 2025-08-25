@@ -73,7 +73,25 @@ function zigzagStr(str, numRows){
   }
   return arr.join("");
 }
+
+var convertNum = function(num){
+    let number = 0;
+    for(let i of num){
+        for(let j=1;j<=9;j++){
+            if(j==i){
+                number = (number * 10) + i;
+                console.log("condition true : " + number + " " + j + " " + i);
+                break;
+            }
+        }
+        console.log(i);
+    }
+    return number;
+}
 {
-  let zig = zigzagStr("PAYPALISHIRING", 3);
-  console.log(zig);
+  // let zig = zigzagStr("PAYPALISHIRING", 3);
+  // console.log(zig);
+  let a = convertNum("2");
+  let b = convertNum("3");
+  console.log(a * b);
 }
